@@ -1,4 +1,8 @@
-// Build an image with souce image tag and version.
+
+docker login
+
+
+/ Build an image with souce image tag and version.
 docker build  -t firstimage:version
 
 // Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
