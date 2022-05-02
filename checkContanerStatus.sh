@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 
 Mode=$(docker inspect --format "{{.State.Running}}" $1)
 

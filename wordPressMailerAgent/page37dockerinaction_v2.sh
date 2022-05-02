@@ -27,8 +27,10 @@ echo "-------------------------------------------------------"
 echo "wordpress"
 
 WP_CID=$(docker create --link $DB_CID:mysql -p 80 \
+        --name wp_$CLIENT_ID \
         --read-only -v /run/apache2/ --tmpfs /tmp \
-        wordpress:5.0.0-php7.2-apache)
+        -e WORDPRESS_DB_NAME=$CLIENT_ID \
+        --read-only wordpress:5.0.0-php7.2-apache)
 
 docker start $WP_CID
 
@@ -39,7 +41,8 @@ source "/home/amirkh/Documents/dockers/checkContanerStatus.sh" $WP_CID
 echo "-------------------------------------------------------"
 echo "agent"
 
-AGENT_CID=$(docker create --link $WP_CID:insideweb \
+AGENT_CID=$(docker create --name agent_$CLIENT_ID \
+            --link $WP_CID:insideweb \
             --link $MAILER_CID:insidemailer dockerinaction/ch2_agent)
 
 docker start $AGENT_CID
