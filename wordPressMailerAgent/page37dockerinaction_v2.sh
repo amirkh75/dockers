@@ -3,6 +3,8 @@
 
 source "/home/amirkh/Documents/dockers/containerCleaner.sh" &> containerCleanerLogs.txt
 
+CLIENT_ID="v2"
+
 echo "-------------------------------------------------------"
 echo "mysql"
 
@@ -43,7 +45,8 @@ echo "agent"
 
 AGENT_CID=$(docker create --name agent_$CLIENT_ID \
             --link $WP_CID:insideweb \
-            --link $MAILER_CID:insidemailer dockerinaction/ch2_agent)
+            --link $MAILER_CID:insidemailer \
+             dockerinaction/ch2_agent)
 
 docker start $AGENT_CID
 

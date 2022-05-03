@@ -1,9 +1,3 @@
-ced6f4caefa9
-wp_
-60a0ae4c89b4
-wonderful_cartwright
-7901ccd0edd1
-beautiful_dhawan
 Error response from daemon: No such container: CONTAINER
 Error response from daemon: No such container: ID
 Error response from daemon: No such container: IMAGE
@@ -12,37 +6,9 @@ Error response from daemon: No such container: CREATED
 Error response from daemon: No such container: STATUS
 Error response from daemon: No such container: PORTS
 Error response from daemon: No such container: NAMES
-Error response from daemon: No such container: wordpress:5.0.0-php7.2-apache
-Error response from daemon: No such container: "docker-entrypoint.s…"
-Error response from daemon: No such container: 52
-Error response from daemon: No such container: seconds
-Error response from daemon: No such container: ago
-Error response from daemon: No such container: Up
-Error response from daemon: No such container: 51
-Error response from daemon: No such container: seconds
-Error response from daemon: No such container: 0.0.0.0:49155->80/tcp
-Error response from daemon: No such container: dockerinaction/ch2_mailer
-Error response from daemon: No such container: "/mailer/mailer.sh"
-Error response from daemon: No such container: 52
-Error response from daemon: No such container: seconds
-Error response from daemon: No such container: ago
-Error response from daemon: No such container: Up
-Error response from daemon: No such container: 51
-Error response from daemon: No such container: seconds
-Error response from daemon: No such container: 33333/tcp
-Error response from daemon: No such container: mysql:5.7
-Error response from daemon: No such container: "docker-entrypoint.s…"
-Error response from daemon: No such container: 52
-Error response from daemon: No such container: seconds
-Error response from daemon: No such container: ago
-Error response from daemon: No such container: Up
-Error response from daemon: No such container: 51
-Error response from daemon: No such container: seconds
-Error response from daemon: No such container: 3306/tcp,
-Error response from daemon: No such container: 33060/tcp
-a0ad7e923892
-ced6f4caefa9
-60a0ae4c89b4
-7901ccd0edd1
+8a82770a5297
+6bbb43781d30
+754186948c4c
+a381d5e36a43
 WARNING! This will remove all custom networks not used by at least one container.
 Are you sure you want to continue? [y/N] 
