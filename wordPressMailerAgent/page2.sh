@@ -1,3 +1,4 @@
+#! /bin/sh
 SQL_CID=$(docker create -e MYSQL_ROOT_PASSWORD=ch2demo mysql:5)
 
 docker start $SQL_CID

@@ -34,24 +34,31 @@ else
    echo -e "\e[1;31mFalse\e[1;m"
 fi
 
+webIP=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' wp_$CLIENT_ID)  
 
-echo "-------------------------------------------------------"
-echo "agent"
+echo (printf "GET / HTTP/1.0\n\n" | nc -w 2 $webIP 80 | grep '200 OK' )
 
-AGENT_CID=$(docker create --name agent_$CLIENT_ID \
-            --link $WP_CID:insideweb \
-            --link $MAILER_CID:insidemailer dockerinaction/ch2_agent)
-docker start $AGENT_CID
+echo (printf "GET / HTTP/1.0\n\n" | nc -w 2 $webIP 80 | grep '200 OK' )
+echo (printf "GET / HTTP/1.0\n\n" | nc -w 2 $webIP 80 | grep '200 OK' )
+echo (printf "GET / HTTP/1.0\n\n" | nc -w 2 $webIP 80 | grep '200 OK' )
 
-ModeAG=$(docker inspect --format "{{.State.Running}}" $AGENT_CID)
+# echo "-------------------------------------------------------"
+# echo "agent"
 
-if [ $ModeAG = true  ]
-then
-   echo -e "\e[1;32mTrue\e[1;m"
-else
-   echo -e "\e[1;31mFalse\e[1;m"
-fi
+# AGENT_CID=$(docker create --name agent_$CLIENT_ID \
+#             --link $WP_CID:insideweb \
+#             --link $MAILER_CID:insidemailer dockerinaction/ch2_agent)
+# docker start $AGENT_CID
 
-echo "-------------------------------------------------------"
-echo "agent logs"
-docker logs  $AGENT_CID
+# ModeAG=$(docker inspect --format "{{.State.Running}}" $AGENT_CID)
+
+# if [ $ModeAG = true  ]
+# then
+#    echo -e "\e[1;32mTrue\e[1;m"
+# else
+#    echo -e "\e[1;31mFalse\e[1;m"
+# fi
+
+# echo "-------------------------------------------------------"
+# echo "agent logs"
+# docker logs  $AGENT_CID
