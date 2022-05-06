@@ -21,4 +21,5 @@ yes | docker network prune &>> containerCleaner_log_file.txt
 
 # docker volume prune
 
+clear
 
