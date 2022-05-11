@@ -19,7 +19,7 @@ yes | docker network prune &>> containerCleaner_log_file.txt
 
 # docker rm $(docker ps -a -f status=exited -f status=created -q)
 
-# docker volume prune
+yes | docker volume prune
 
 clear
 
