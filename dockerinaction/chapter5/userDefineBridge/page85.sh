@@ -1,5 +1,6 @@
 #! /bin/sh
 
+
 clear
 
 docker network create \

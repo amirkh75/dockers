@@ -1,0 +1,14 @@
+Error response from daemon: No such container: CONTAINER
+Error response from daemon: No such container: ID
+Error response from daemon: No such container: IMAGE
+Error response from daemon: No such container: COMMAND
+Error response from daemon: No such container: CREATED
+Error response from daemon: No such container: STATUS
+Error response from daemon: No such container: PORTS
+Error response from daemon: No such container: NAMES
+f8a7a82c96e5
+WARNING! This will remove all custom networks not used by at least one container.
+Are you sure you want to continue? [y/N] Deleted Networks:
+user-network2
+user-network
+
