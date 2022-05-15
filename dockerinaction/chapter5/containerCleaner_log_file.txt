@@ -1,3 +1,5 @@
+6b0a83b68a15
+lighthouse
 Error response from daemon: No such container: CONTAINER
 Error response from daemon: No such container: ID
 Error response from daemon: No such container: IMAGE
@@ -6,9 +8,19 @@ Error response from daemon: No such container: CREATED
 Error response from daemon: No such container: STATUS
 Error response from daemon: No such container: PORTS
 Error response from daemon: No such container: NAMES
-f8a7a82c96e5
+Error response from daemon: No such container: alpine:3.8
+Error response from daemon: No such container: "sleep
+Error response from daemon: No such container: 1d"
+Error response from daemon: No such container: 12
+Error response from daemon: No such container: minutes
+Error response from daemon: No such container: ago
+Error response from daemon: No such container: Up
+Error response from daemon: No such container: 12
+Error response from daemon: No such container: minutes
+6b0a83b68a15
+e4a05f970c02
 WARNING! This will remove all custom networks not used by at least one container.
 Are you sure you want to continue? [y/N] Deleted Networks:
-user-network2
 user-network
+user-network2
 

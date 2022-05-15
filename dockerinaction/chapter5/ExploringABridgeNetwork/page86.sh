@@ -75,3 +75,53 @@ docker attach network-explorer
 # Host: 10.0.42.129 (9fb42c028ee7)	Status: Up
 # Host: 10.0.43.128 ()	Status: Up
 # Host: 10.0.43.129 (9fb42c028ee7)	Status: Up
+
+
+docker run -d \
+    --name lighthouse \
+    --network user-network2 \
+    alpine:3.8 \
+        sleep 1d
+
+docker attach network-explorer
+
+# input:
+# nmap -sn 10.0.42.* -sn 10.0.43.* -oG /dev/stdout | grep Status
+
+# output:
+# Host: 10.0.42.128 ()	Status: Up
+# Host: 10.0.42.129 (e4a05f970c02)	Status: Up
+# Host: 10.0.43.128 ()	Status: Up
+# Host: 10.0.43.130 (lighthouse.user-network2)	Status: Up
+# Host: 10.0.43.129 (e4a05f970c02)	Status: Up
+
+
+# input:
+# nslookup lighthouse
+
+# output:
+# nslookup: can't resolve '(null)': Name does not resolve
+# Name:      lighthouse
+# Address 1: 10.0.43.130 lighthouse.user-network2
+
+
+
+# input:
+# / # ping 10.0.43.130
+
+# output:
+# PING 10.0.43.130 (10.0.43.130): 56 data bytes
+# 64 bytes from 10.0.43.130: seq=0 ttl=64 time=0.180 ms
+# 64 bytes from 10.0.43.130: seq=1 ttl=64 time=0.159 ms
+# 64 bytes from 10.0.43.130: seq=2 ttl=64 time=0.131 ms
+# 64 bytes from 10.0.43.130: seq=3 ttl=64 time=0.132 ms
+# 64 bytes from 10.0.43.130: seq=4 ttl=64 time=0.131 ms
+# 64 bytes from 10.0.43.130: seq=5 ttl=64 time=0.132 ms
+# 64 bytes from 10.0.43.130: seq=6 ttl=64 time=0.131 ms
+# ^C
+# --- 10.0.43.130 ping statistics ---
+# 7 packets transmitted, 7 packets received, 0% packet loss
+# round-trip min/avg/max = 0.131/0.142/0.180 ms
+# / # exit
+
+
