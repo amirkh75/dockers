@@ -1,11 +1,12 @@
 #! /bin/sh
 
+
 docker stop $(docker ps) &> containerCleaner_log_file.txt
 
 list=$(docker ps -aq) 
 
 if [ -n "$list" ]; then
-    docker rm -f $list &>> containerCleaner_log_file.txt
+    docker rm -vf $list &>> containerCleaner_log_file.txt
 fi
 
 net_list=$(docker network ls -q) &>> containerCleaner_log_file.txt
