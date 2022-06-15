@@ -1,11 +1,10 @@
 #! /bin/bash
 
 
-docker run -d --name backoff-detector --restart always busybox:1.29 date
+docker run --name backoff-detector --restart always busybox:1.29 date
 
 
-sleep 10s
-
+sleep 5
 
 docker logs -f backoff-detector
 
